@@ -1,7 +1,9 @@
 print-alias
 ===========
 
-This prints expanded aliases whenever you run them at the command line.
+This prints commands with aliases expanded whenever you use an alias at the command line.
+
+<img width="385" alt="demo" src="images/demo.png">
 
 Usage
 -----
@@ -12,13 +14,13 @@ With [zplug](https://github.com/zplug/zplug), add the following to your `~/.zshr
 zplug "brymck/print-alias"
 ```
 
-Alternatively, you can use [Antigen](https://github.com/zsh-users/antigen):
+You can also use [Antigen](https://github.com/zsh-users/antigen):
 
 ```zsh
 antigen bundle brymck/print-alias
 ```
 
-If you want to `source` it manually, you can also clone this repo and use:
+And lastly, if you want to `source` it manually, you can also clone this repo and use:
 
 ```bash
 source path/to/print-alias.plugin.zsh
