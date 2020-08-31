@@ -2,7 +2,7 @@ _print-alias-accept-line () {
     emulate -L zsh
 
     # Constants
-    local -r ALIAS_FORMAT=$'\e[36m'
+    local -r ALIAS_FORMAT=${PRINT_ALIAS_FORMAT:-$'\e[36m'}
     local -r NON_ALIAS_FORMAT=$'\e[2m'
     local -r RESET_COLORS=$'\e[0m'
 
