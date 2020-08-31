@@ -22,6 +22,17 @@ antigen bundle brymck/print-alias
 
 And lastly, if you want to `source` it manually, you can also clone this repo and use:
 
-```bash
+```zsh
 source path/to/print-alias.plugin.zsh
+```
+
+Configuration
+-------------
+
+Change expanded alias text color (to bright white, in this example):
+
+```zsh
+export PRINT_ALIAS_FORMAT=$'\e[1m'
+
+zplug "brymck/print-alias"
 ```
