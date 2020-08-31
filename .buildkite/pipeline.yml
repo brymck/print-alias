@@ -1,0 +1,3 @@
+steps:
+  - label: "Build"
+    command: echo test
