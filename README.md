@@ -1,6 +1,8 @@
 print-alias
 ===========
 
+[![Build status](https://badge.buildkite.com/4186527ec2fb1a9ca038fbb8296b1869c9a62d5096a0291e5d.svg)](https://buildkite.com/brymck-dot-io/print-alias)
+
 This prints commands with aliases expanded whenever you use an alias at the command line.
 
 <img width="385" alt="demo" src="images/demo.png">
