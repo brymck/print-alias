@@ -1,0 +1,19 @@
+name: Test
+on:
+  - push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install ZUnit
+        run: |
+          git clone https://github.com/zunit-zsh/zunit /tmp/zunit
+          pushd /tmp/zunit
+          ./build.zsh
+          chmod u+x ./zunit
+          cp ./zunit /usr/local/bin
+          popd
+      - name: Run tests
+        run: |
+          zunit run
