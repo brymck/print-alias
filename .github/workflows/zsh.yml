@@ -17,5 +17,6 @@ jobs:
           sudo cp ./zunit /usr/local/bin
           popd
       - name: Run tests
-        run: |
-          zunit run
+        run: zunit run
+      - name: Upload code coverage
+        run: 'bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }} -f tests/_output/output.txt'
