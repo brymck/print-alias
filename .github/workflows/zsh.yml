@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install Zsh
+        run: sudo apt-get update && sudo apt-get install zsh
       - name: Install ZUnit
         run: |
           git clone https://github.com/zunit-zsh/zunit /tmp/zunit
