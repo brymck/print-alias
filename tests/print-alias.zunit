@@ -1,0 +1,17 @@
+#!/usr/bin/env zunit
+@setup {
+  load ../print-alias.plugin.zsh
+  bold="\e[1m"
+  faint="\e[2m"
+  reset="\e[0m"
+  PRINT_ALIAS_PREFIX='> '
+  PRINT_ALIAS_FORMAT=$bold
+  PRINT_NON_ALIAS_FORMAT=$faint
+}
+
+@test 'Formats output based from environment variables' {
+  alias foo=bar
+  export BUFFER='foo bar'
+  run _print-alias
+  assert ${output:1} same_as "> ${bold}bar${reset} ${faint}bar${reset}"
+}
