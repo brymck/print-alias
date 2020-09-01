@@ -8,13 +8,18 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install Zsh
         run: sudo apt-get update && sudo apt-get install zsh
+      - name: Install Revolver
+        run: |
+          git clone https://github.com/molovo/revolver /tmp/revolver
+          chmod +x /tmp/revolver/revolver
+          sudo mv /tmp/revolver/revolver /usr/local/bin
       - name: Install ZUnit
         run: |
           git clone https://github.com/zunit-zsh/zunit /tmp/zunit
           pushd /tmp/zunit
           ./build.zsh
           chmod +x ./zunit
-          sudo cp ./zunit /usr/local/bin
+          sudo mv ./zunit /usr/local/bin
           popd
       - name: Run tests
         run: zunit run
