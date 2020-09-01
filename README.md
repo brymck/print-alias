@@ -6,7 +6,7 @@ print-alias
 
 This prints commands with aliases expanded whenever you use an alias at the command line.
 
-<img width="385" alt="demo" src="images/demo.png">
+<img height="76" width="385" alt="demo" src="images/demo.png">
 
 Usage
 -----
@@ -32,10 +32,16 @@ source path/to/print-alias.plugin.zsh
 Configuration
 -------------
 
-Change expanded alias text color (to bright white, in this example):
+You can change the line prefix as well as the format of expanded aliases and non-aliases:
 
 ```zsh
+export PRINT_ALIAS_PREFIX='  ╰─> '
 export PRINT_ALIAS_FORMAT=$'\e[1m'
+export PRINT_NON_ALIAS_FORMAT=$'\e[0m'
 
 zplug "brymck/print-alias"
 ```
+
+The above will result in output such as the second line here:
+
+<img height="41" width="259" alt="configuration" src="images/configuration.png">
