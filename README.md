@@ -32,12 +32,17 @@ source path/to/print-alias.plugin.zsh
 Configuration
 -------------
 
-You can change the line prefix as well as the format of expanded aliases and non-aliases:
+You can change the line prefix as well as the format of expanded aliases and non-aliases.
+You can exclude some specific aliases to be displayed.
+You may as well prevent any command which has been redefined by an alias to be displayed (aliases such as `alias grep='grep --colour'` or `alias ls='ls -aF'`)
 
 ```zsh
 export PRINT_ALIAS_PREFIX='  ╰─> '
 export PRINT_ALIAS_FORMAT=$'\e[1m'
 export PRINT_NON_ALIAS_FORMAT=$'\e[0m'
+
+export PRINT_ALIAS_IGNORE_REDEFINED_COMMANDS=true
+export PRINT_ALIAS_IGNORE_ALIASES=(my_alias my_other_alias)
 
 zplug "brymck/print-alias"
 ```
